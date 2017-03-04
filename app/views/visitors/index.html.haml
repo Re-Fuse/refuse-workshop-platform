@@ -1,0 +1,20 @@
+.row
+  .col-md-4
+    %ul.list-unstyled
+      %li.left.clearfix
+        .chat-body.clearfix
+          .header
+            %strong.primary-font Jack Sparrow
+          %p
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare
+            dolor, quis ullamcorper ligula sodales.
+
+
+    .input-group
+      %input#btn-input.form-control.input-sm{:placeholder => "Type your message here...", :type => "text"}/
+      %span.input-group-btn
+        %button#btn-chat.btn.btn-warning.btn-sm
+          Send
+
+  .col-md-8
+    Showing
