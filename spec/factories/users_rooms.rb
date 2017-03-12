@@ -1,6 +1,5 @@
 FactoryGirl.define do
-  factory :message do
-    value "MyText"
+  factory :users_room do
     user nil
     room nil
   end
