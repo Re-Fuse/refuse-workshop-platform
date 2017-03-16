@@ -26,6 +26,8 @@ gem 'bootstrap-sass'
 gem 'devise'
 gem 'haml-rails'
 gem 'high_voltage'
+gem 'redis', '~> 3.2'
+
 group :development do
   gem 'better_errors'
   gem 'guard-bundler'
