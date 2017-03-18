@@ -6,4 +6,4 @@ test:
 
 production:
   adapter: redis
-  url: redis://h:pd2bf153f6687ba203ab7e7960efca8b4ef2d2f79f619413bbf3ad18d30dbaa02@ec2-34-206-56-185.compute-1.amazonaws.com:14889
+  url: redis://rediscloud:password@localhost:6379
