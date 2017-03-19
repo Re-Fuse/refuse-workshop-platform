@@ -1,13 +1,9 @@
 .row
-  .col-md-4
+  .col-md-4#chat
     %ul.list-unstyled#messages
       = render @messages
 
-    .input-group
-      %input#chat-input.form-control.input-sm{:placeholder => "Type your message here...", :type => "text"}/
-      %span.input-group-btn
-        %button#btn-chat.btn.btn-warning.btn-sm
-          Send
+    %input#chat-input.form-control{:placeholder => "Type your message here...", :type => "text", autofocus: true}/
 
   .col-md-8
     Showing
