@@ -1,11 +1,23 @@
 .row
   .col-md-4
-    = render 'messages/chat', messages: @messages.where(room: 1), room: 1
+    %br
+    %ul.nav.nav-tabs{:role => "tablist"}
+      %li.active{:role => "presentation"}
+        %a{"aria-controls" => "home", "data-toggle" => "tab", :href => "#home", :role => "tab"} Living Room
+      %li{:role => "presentation"}
+        %a{"aria-controls" => "profile", "data-toggle" => "tab", :href => "#profile", :role => "tab"} Room 1
+      %li{:role => "presentation"}
+        %a{"aria-controls" => "messages", "data-toggle" => "tab", :href => "#messages", :role => "tab"} Room 2
+      %li{:role => "presentation"}
+        %a{"aria-controls" => "settings", "data-toggle" => "tab", :href => "#settings", :role => "tab"} Room 3
+    / Tab panes
+    .tab-content
+      #home.tab-pane.active{:role => "tabpanel"}= render 'messages/chat', messages: @messages.where(room: 1), room: 1
+      #profile.tab-pane{:role => "tabpanel"}= render 'messages/chat', messages: @messages.where(room: 2), room: 2
+      #messages.tab-pane{:role => "tabpanel"}= render 'messages/chat', messages: @messages.where(room: 3), room: 3
+      #settings.tab-pane{:role => "tabpanel"}= render 'messages/chat', messages: @messages.where(room: 4), room: 4
+
+
 
   .col-md-8
-    #stage
-      = render "cues/stage/#{@cue.action}"
-    #reactions
-      = render 'messages/chat', messages: @messages.where(room: 2), room: 2
-      -# = render 'messages/chat', messages: @messages, room: 3
-      -# = render 'messages/chat', messages: @messages, room: 4
+    #stage= render "cues/stage/#{@cue.action}"

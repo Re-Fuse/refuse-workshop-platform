@@ -7,7 +7,7 @@ App.cue = App.cable.subscriptions.create "CueChannel",
 
   received: (data) ->
     $('#stage').html data['message']
-    $(".active").hide()
+    $(".st_active").hide()
     $("#active_#{data['id']}").show()
 
   activate: (id)->

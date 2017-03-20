@@ -10,7 +10,7 @@ Cue.delete_all
 
 Cue.create!(
   active: false,
-  name: 'Tetie',
+  name: 'Text to Speech Example',
   position: 1,
   action: 'cue_1',
   duration: 5
@@ -26,7 +26,7 @@ Cue.create!(
 
 Cue.create!(
   active: false,
-  name: 'Tesdfdsfstie',
+  name: 'Video Example',
   position: 3,
   action: 'cue_3',
   duration: 5

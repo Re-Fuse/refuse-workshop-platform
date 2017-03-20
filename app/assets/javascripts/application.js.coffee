@@ -17,9 +17,9 @@
 #= require_tree .
 
 $(window).on 'resize', ->
-  $('#messages').height($(window).height()-120)
+  $('.messages').height($(window).height()-180)
 
 $(document).on 'turbolinks:load', ->
   $(window).trigger('resize')
-  $('#messages').scrollTop($('#messages')[0].scrollHeight) if $('#messages').length
-  $(".active").hide()
+  $('.messages').scrollTop($('.messages')[0].scrollHeight) if $('.messages').length
+  $(".st_active").hide()
