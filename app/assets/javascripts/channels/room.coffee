@@ -6,15 +6,15 @@ App.room = App.cable.subscriptions.create "RoomChannel",
     # Called when the subscription has been terminated by the server
 
   received: (data) ->
-    $('#messages').append data['message']
-    $('#messages').scrollTop($('#messages')[0].scrollHeight);
+    $("#chat[data-room='#{data['room_id']}'] #messages").append data['message']
+    $("#chat[data-room='#{data['room_id']}'] #messages").scrollTop($("#chat[data-room='#{data['room_id']}'] #messages")[0].scrollHeight);
 
-  speak: (message)->
-    @perform 'speak', message: message
+  speak: (message, room_id)->
+    @perform 'speak', message: message, room_id: room_id
 
 
 $(document).on 'keypress', '#chat-input', (event)->
   if event.keyCode is 13
-    App.room.speak event.target.value
+    App.room.speak event.target.value, $(this).parent('#chat').data('room')
     event.target.value = ''
     event.preventDefault()

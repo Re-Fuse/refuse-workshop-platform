@@ -1,0 +1,9 @@
+%tr
+  %td
+    = cue.position
+    .label.label-info.active{ id: "active_#{cue.id}" } Active
+  %td= cue.name
+  %td= cue.action
+  %td= cue.duration
+  %td
+    %a.btn.btn-primary.activate{ data: { id: cue.id }} Play

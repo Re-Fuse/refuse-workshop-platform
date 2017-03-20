@@ -1,9 +1,11 @@
 .row
-  .col-md-4#chat
-    %ul.list-unstyled#messages
-      = render @messages
-
-    %input#chat-input.form-control{:placeholder => "Type your message here...", :type => "text", autofocus: true}/
+  .col-md-4
+    = render 'messages/chat', messages: @messages.where(room: 1), room: 1
 
   .col-md-8
-    Showing
+    #stage
+      = render "cues/stage/#{@cue.action}"
+    #reactions
+      = render 'messages/chat', messages: @messages.where(room: 2), room: 2
+      -# = render 'messages/chat', messages: @messages, room: 3
+      -# = render 'messages/chat', messages: @messages, room: 4

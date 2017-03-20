@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170312191213) do
+ActiveRecord::Schema.define(version: 20170319172159) do
+
+  create_table "cues", force: :cascade do |t|
+    t.boolean  "active"
+    t.string   "name"
+    t.string   "position"
+    t.string   "action"
+    t.string   "duration"
+    t.string   "integer"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "messages", force: :cascade do |t|
     t.text     "value"
@@ -25,6 +36,12 @@ ActiveRecord::Schema.define(version: 20170312191213) do
   create_table "rooms", force: :cascade do |t|
     t.string   "name"
     t.text     "purpose"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "states", force: :cascade do |t|
+    t.integer  "step"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

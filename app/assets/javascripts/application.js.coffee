@@ -19,6 +19,7 @@
 $(window).on 'resize', ->
   $('#messages').height($(window).height()-120)
 
-$ ->
+$(document).on 'turbolinks:load', ->
   $(window).trigger('resize')
-  $('#messages').scrollTop($('#messages')[0].scrollHeight);
+  $('#messages').scrollTop($('#messages')[0].scrollHeight) if $('#messages').length
+  $(".active").hide()

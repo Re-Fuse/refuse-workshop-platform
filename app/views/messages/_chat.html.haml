@@ -1,0 +1,5 @@
+#chat{ data: {room: room} }
+  %ul.list-unstyled#messages
+    = render messages
+
+  %input#chat-input.form-control{:placeholder => "Type your message here...", :type => "text", autofocus: true}/
