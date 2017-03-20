@@ -1,5 +1,8 @@
 .row
-  .col-md-4
+  .col-md-7
+    #stage= render "cues/stage/#{@cue.action}"
+
+  .col-md-5
     %br
     %ul.nav.nav-tabs{:role => "tablist"}
       %li.active{:role => "presentation"}
@@ -16,8 +19,3 @@
       #profile.tab-pane{:role => "tabpanel"}= render 'messages/chat', messages: @messages.where(room: 2), room: 2
       #messages.tab-pane{:role => "tabpanel"}= render 'messages/chat', messages: @messages.where(room: 3), room: 3
       #settings.tab-pane{:role => "tabpanel"}= render 'messages/chat', messages: @messages.where(room: 4), room: 4
-
-
-
-  .col-md-8
-    #stage= render "cues/stage/#{@cue.action}"
