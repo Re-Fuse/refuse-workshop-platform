@@ -10,17 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170319172159) do
+ActiveRecord::Schema.define(version: 20170322233916) do
 
   create_table "cues", force: :cascade do |t|
     t.boolean  "active"
     t.string   "name"
     t.string   "position"
-    t.string   "action"
+    t.string   "partial_name"
     t.string   "duration"
     t.string   "integer"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+    t.integer  "gesture",       default: 0
+    t.string   "subtitle"
+    t.string   "text"
+    t.string   "youtube_id"
+    t.string   "youtube_start"
+    t.string   "youtube_end"
   end
 
   create_table "messages", force: :cascade do |t|

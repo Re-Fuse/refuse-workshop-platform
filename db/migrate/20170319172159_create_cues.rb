@@ -4,7 +4,7 @@ class CreateCues < ActiveRecord::Migration[5.0]
       t.boolean :active
       t.string :name
       t.string :position
-      t.string :action
+      t.string :partial_name
       t.string :duration
       t.string :integer
 

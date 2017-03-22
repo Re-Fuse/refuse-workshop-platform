@@ -27,6 +27,7 @@ gem 'devise'
 gem 'haml-rails'
 gem 'high_voltage'
 gem 'redis', '~> 3.2'
+gem 'annotate'
 
 group :development do
   gem 'better_errors'

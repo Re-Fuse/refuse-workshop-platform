@@ -1,0 +1,8 @@
+%h3
+  = cue.name
+  %small= cue.subtitle
+.well
+  %blockquote= cue.text
+
+:coffeescript
+  responsiveVoice.speak(#{j cue.text})
