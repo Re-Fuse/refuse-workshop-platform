@@ -24,7 +24,7 @@
 class Cue < ApplicationRecord
   belongs_to :room
 
-  enum gesture: [:view, :speak, :watch]
+  enum gesture: [:view, :speak, :watch, :bot]
 
   validates_presence_of :partial_name, if: -> { view? }
   validates_presence_of [:text, :speak_options], if: -> { speak? }
@@ -42,6 +42,8 @@ class Cue < ApplicationRecord
     case gesture
     when 'speak'
       path = "cues/stage/speak"
+    when 'bot'
+      path = "cues/stage/bot"
     when 'watch'
       path = "cues/stage/video"
     when 'view'
