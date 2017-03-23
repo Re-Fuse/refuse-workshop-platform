@@ -6,9 +6,11 @@ App.cue = App.cable.subscriptions.create "CueChannel",
     # Called when the subscription has been terminated by the server
 
   received: (data) ->
-    $('#stage').html data['message']
-    $(".st_active").hide()
-    $("#active_#{data['id']}").show()
+    if (data['room_id'] == 1) || (data['room_id'] == user_room_id)
+      $('#stage').html data['message']
+      $(".st_active").hide()
+      $("#active_#{data['id']}").show()
+    # TODO: Activate room tab
 
   activate: (id)->
     @perform 'activate', id: id

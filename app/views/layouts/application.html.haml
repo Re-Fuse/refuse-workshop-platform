@@ -4,7 +4,9 @@
     %meta{:name => "viewport", :content => "width=device-width, initial-scale=1.0"}
     %title= content_for?(:title) ? yield(:title) : 'Refuse'
     %meta{:name => "description", :content => "#{content_for?(:description) ? yield(:description) : 'Refuse'}"}
-    <script src='https://code.responsivevoice.org/responsivevoice.js'></script>
+    %script{:src => "https://code.responsivevoice.org/responsivevoice.js"}
+    :coffeescript
+      window.user_room_id = #{current_user&.room_id || 0}
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track' => 'reload'
     = csrf_meta_tags

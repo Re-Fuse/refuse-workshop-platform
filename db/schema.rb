@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170323002239) do
+ActiveRecord::Schema.define(version: 20170323004034) do
 
   create_table "cues", force: :cascade do |t|
     t.boolean  "active"
@@ -69,6 +69,7 @@ ActiveRecord::Schema.define(version: 20170323002239) do
     t.datetime "updated_at",                             null: false
     t.string   "name"
     t.boolean  "director",               default: false, null: false
+    t.integer  "room_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

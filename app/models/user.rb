@@ -26,4 +26,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :messages, dependent: :destroy
+  belongs_to :room
 end
