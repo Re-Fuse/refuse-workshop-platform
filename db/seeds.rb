@@ -66,3 +66,4 @@ Cue.create!(
   duration: 5,
   room_id: 1
 )
+User.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password')

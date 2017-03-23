@@ -17,6 +17,7 @@
 #  updated_at             :datetime         not null
 #  name                   :string
 #  director               :boolean          default("f"), not null
+#  room_id                :integer
 #
 
 describe User do

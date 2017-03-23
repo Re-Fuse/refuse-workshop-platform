@@ -12,6 +12,8 @@ gem 'coffee-rails', '~> 4.2'
 gem 'jquery-rails'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
+gem 'inherited_resources', '~> 1.7'
+gem 'activeadmin', '1.0.0.pre5'
 group :development, :test do
   gem 'byebug', platform: :mri
 end

@@ -14,7 +14,7 @@
 #= require jquery_ujs
 #= require turbolinks
 #= require bootstrap-sprockets
-#= require_tree .
+#= require cable
 
 $(window).on 'resize', ->
   $('.messages').height($(window).height()-180)
