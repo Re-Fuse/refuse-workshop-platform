@@ -21,7 +21,7 @@
 #  gesture       :integer          default("0")
 #  subtitle      :string
 #  text          :string
-#  youtube_id    :string
+#  youtube_indentifier    :string
 #  youtube_start :string
 #  youtube_end   :string
 # gesture: [:view, :speak, :watch]
@@ -57,7 +57,7 @@ Cue.create!(
 Cue.create!(
   active: true,
   gesture: :watch,
-  youtube_id: 'b72uaZiIJpA',
+  youtube_indentifier: 'b72uaZiIJpA',
   youtube_start: '10',
   youtube_end: '15',
   name: 'Welcome',
