@@ -17,6 +17,8 @@
 #  youtube_id    :string
 #  youtube_start :string
 #  youtube_end   :string
+#  speak_options :string
+#  room_id       :integer
 #
 
 require 'rails_helper'

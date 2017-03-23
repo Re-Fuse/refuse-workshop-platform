@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170322233916) do
+ActiveRecord::Schema.define(version: 20170323002239) do
 
   create_table "cues", force: :cascade do |t|
     t.boolean  "active"
@@ -27,6 +27,8 @@ ActiveRecord::Schema.define(version: 20170322233916) do
     t.string   "youtube_id"
     t.string   "youtube_start"
     t.string   "youtube_end"
+    t.string   "speak_options"
+    t.integer  "room_id"
   end
 
   create_table "messages", force: :cascade do |t|

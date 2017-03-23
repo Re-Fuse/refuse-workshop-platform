@@ -27,6 +27,7 @@
 # gesture: [:view, :speak, :watch]
 
 
+
 Cue.delete_all
 
 # View
@@ -37,17 +38,20 @@ Cue.create!(
   name: 'Welcome',
   subtitle: 'jajaja',
   position: 1,
-  duration: 5
+  duration: 5,
+  room_id: 1
 )
 
 Cue.create!(
   active: true,
   gesture: :speak,
   text: "Hi marta!! yoyo hey hey",
+  speak_options: "UK English Male",
   name: 'Welcome',
   subtitle: 'subtitltelelt',
   position: 2,
-  duration: 5
+  duration: 5,
+  room_id: 1
 )
 
 Cue.create!(
@@ -59,5 +63,6 @@ Cue.create!(
   name: 'Welcome',
   subtitle: 'jajaja',
   position: 3,
-  duration: 5
+  duration: 5,
+  room_id: 1
 )
