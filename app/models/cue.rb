@@ -22,6 +22,10 @@
 class Cue < ApplicationRecord
   enum gesture: [:view, :speak, :watch]
 
+  validates_presence_of :partial_name, if: -> { view? }
+  validates_presence_of :text, if: -> { speak? }
+  validates_presence_of [:youtube_id, :youtube_start, :youtube_end], if: -> { watch? }
+
   # Acivate this cue
   def activate!
     Cue.update_all active: false
@@ -32,11 +36,11 @@ class Cue < ApplicationRecord
   # Give back html for cue
   def render
     case gesture
-    when :speak
+    when 'speak'
       path = "cues/stage/speak"
-    when :watch
+    when 'watch'
       path = "cues/stage/video"
-    when :view
+    when 'view'
       path = "cues/stage/#{partial_name}"
     else
       fail "Gesture for cue #{id} not set"
