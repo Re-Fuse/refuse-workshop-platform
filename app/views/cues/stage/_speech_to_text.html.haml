@@ -1,0 +1,14 @@
+%h3
+  = cue.name
+  %small= cue.subtitle
+.well
+  #text
+
+-# %p You can highlight whatever you find important by selecting the text you like and clicking the button `highlight`
+-# %a.btn.btn-primary#save-text Highlight
+
+:coffeescript
+  listener = new webspeech.Listener()
+  listener.listen "en", (text)->
+    console.log(text)
+    $('#text').append text

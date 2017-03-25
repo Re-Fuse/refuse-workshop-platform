@@ -26,7 +26,7 @@ class Cue < ApplicationRecord
 
   acts_as_list
 
-  enum gesture: [:view, :speak, :watch, :bot]
+  enum gesture: [:view, :speak, :watch, :bot, :speech_to_text]
 
   validates_presence_of [:position, :room]
   validates_presence_of :partial_name, if: -> { view? }
@@ -53,6 +53,8 @@ class Cue < ApplicationRecord
       path = "cues/stage/video"
     when 'view'
       path = "cues/stage/#{partial_name}"
+    when 'speech_to_text'
+      path = "cues/stage/speech_to_text"
     else
       fail "Gesture for cue #{id} not set in render"
     end
