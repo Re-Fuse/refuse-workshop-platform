@@ -1,7 +1,7 @@
 %li.left.clearfix
   - if message.user.email == 'bot@bot.com'
     .pull-left
-      %img.ghost{ src: 'http://emojipedia-us.s3.amazonaws.com/cache/22/92/229284d75d37ac930879df2b19e93de5.png' }
+      %img.ghost{ src: image_path('bot.png') }
   .chat-body.clearfix
     .header
       %strong.primary-font #{message.user.name}:
