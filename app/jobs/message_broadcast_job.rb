@@ -6,7 +6,7 @@ class MessageBroadcastJob < ApplicationJob
       'room_channel',
       message: render_message(message),
       room_id: message.room.id,
-      bot: (message.user.name == '👻'),
+      bot: (message.user.email == 'bot@bot.com'),
       text: message.value
     )
   end
