@@ -13,4 +13,12 @@ class Room < ApplicationRecord
   has_many :messages
   has_many :users
   has_many :cues
+
+  def self.set_group_a
+    #code
+  end
+
+  def self.set_group_b
+    #code
+  end
 end

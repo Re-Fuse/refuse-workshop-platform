@@ -30,7 +30,7 @@ unless User.find_by(email: 'bot@bot.com').present?
   User.create!(
     email: 'bot@bot.com',
     password: 'sdfsdfsdfsdfg434g',
-    name: '👻'
+    name: 'RE-FUSE Bot'
   )
 end
 

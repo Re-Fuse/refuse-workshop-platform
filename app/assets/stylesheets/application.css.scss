@@ -106,15 +106,16 @@
   // background: gray;
 }
 
-.bot.header{
-  font-size: 34px;
-}
-
-
 #stage blockquote::selection {
-    background-color: green;
+  background-color: green;
 }
 
 #stage blockquote{
   font-style: italic;
+}
+
+.messages span{
+  font-style: italic;
+  background-color: #87CEEB;
+  padding: 5px;
 }
