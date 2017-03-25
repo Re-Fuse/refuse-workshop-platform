@@ -11,7 +11,7 @@ ActiveAdmin.register Cue do
     :gesture,
     :subtitle,
     :text,
-    :youtube_id,
+    :youtube_identifier,
     :youtube_start,
     :youtube_end,
     :speak_options,

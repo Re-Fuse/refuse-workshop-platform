@@ -11,7 +11,7 @@ App.room = App.cable.subscriptions.create "RoomChannel",
 
     # Speak bot
     if data['bot']
-      responsiveVoice.speak(data['text'], "UK English Male", { pitch: 1.6 })
+      responsiveVoice.speak(data['text'], "US English Male", { pitch: 1.6 })
 
   speak: (message, room_id)->
     @perform 'speak', message: message, room_id: room_id
