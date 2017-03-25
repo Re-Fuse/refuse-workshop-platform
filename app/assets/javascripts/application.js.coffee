@@ -43,6 +43,7 @@ Kolich.Selector.save = ->
   st = Kolich.Selector.getSelected()
   if st != ''
     App.room.speak 'Highlighted this:\n' + st, 1
+    $('#save-text').hide()
 
 
 $(document).ready ->

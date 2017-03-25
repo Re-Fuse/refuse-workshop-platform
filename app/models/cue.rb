@@ -23,7 +23,7 @@
 
 class Cue < ApplicationRecord
   belongs_to :room
-
+  acts_as_list
   enum gesture: [:view, :speak, :watch, :bot]
 
   validates_presence_of :partial_name, if: -> { view? }
