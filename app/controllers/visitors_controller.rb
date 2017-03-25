@@ -7,6 +7,7 @@ class VisitorsController < ApplicationController
   end
 
   def director
+    raise 'Only directors' unless current_user.director?
     @cues = Cue.order(:position).all
   end
 end

@@ -1,5 +1,5 @@
 %li.left.clearfix
   .chat-body.clearfix
-    .header
+    .header{ class: message.user.name == '👻' ? 'bot' : 'human' }
       %strong.primary-font #{message.user.name}:
     %p= message.value

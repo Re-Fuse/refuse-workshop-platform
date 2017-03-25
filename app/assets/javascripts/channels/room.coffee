@@ -9,6 +9,10 @@ App.room = App.cable.subscriptions.create "RoomChannel",
     $("#chat[data-room='#{data['room_id']}'] .messages").append data['message']
     $("#chat[data-room='#{data['room_id']}'] .messages").scrollTop($("#chat[data-room='#{data['room_id']}'] .messages")[0].scrollHeight);
 
+    # Speak bot
+    if data['bot']
+      responsiveVoice.speak(data['text'], "UK English Male", { pitch: 1.6 })
+
   speak: (message, room_id)->
     @perform 'speak', message: message, room_id: room_id
 

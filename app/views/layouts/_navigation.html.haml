@@ -8,10 +8,11 @@
         %span.icon-bar
         %span.icon-bar
       = link_to 'Home', root_path, class: 'navbar-brand'
-    %ul.nav.navbar-nav
-      %li
-        = link_to 'Director', '/director'
-      %li
-        = link_to 'Admin', '/admin'
+    - if current_user.director?
+      %ul.nav.navbar-nav
+        %li
+          = link_to 'Director', '/director'
+        %li
+          = link_to 'Admin', '/admin'
     %ul.nav.navbar-nav.navbar-right
       = render 'layouts/nav_links_for_auth'

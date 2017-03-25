@@ -26,44 +26,12 @@
 #  youtube_end   :string
 # gesture: [:view, :speak, :watch]
 
+unless User.find_by(email: 'bot@bot.com').present?
+  User.create!(
+    email: 'bot@bot.com',
+    password: 'sdfsdfsdfsdfg434g',
+    name: '👻'
+  )
+end
 
-
-Cue.delete_all
-
-# View
-Cue.create!(
-  active: true,
-  gesture: :view,
-  partial_name: 'link',
-  name: 'Welcome',
-  subtitle: 'jajaja',
-  position: 1,
-  duration: 5,
-  room_id: 1
-)
-
-Cue.create!(
-  active: true,
-  gesture: :speak,
-  text: "Hi marta!! yoyo hey hey",
-  speak_options: "UK English Male",
-  name: 'Welcome',
-  subtitle: 'subtitltelelt',
-  position: 2,
-  duration: 5,
-  room_id: 1
-)
-
-Cue.create!(
-  active: true,
-  gesture: :watch,
-  youtube_indentifier: 'b72uaZiIJpA',
-  youtube_start: '10',
-  youtube_end: '15',
-  name: 'Welcome',
-  subtitle: 'jajaja',
-  position: 3,
-  duration: 5,
-  room_id: 1
-)
-User.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password')
+User.where(email: ['kieranklaassen@gmail.com', 'katamiaennoia@gmail.com']).update_all director: true
