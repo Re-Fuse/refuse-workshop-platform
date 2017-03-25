@@ -2,9 +2,10 @@
   = cue.name
   %small= cue.subtitle
 .well
-  %blockquote= cue.text
+  %blockquote= simple_format cue.text
 
-%a.btn.btn-primary#save-text Save Highlighted Text
+%p You can highlight whatever you find important by selecting the text you like and clicking the button `highlight`
+%a.btn.btn-primary#save-text Highlight
 
 :coffeescript
   responsiveVoice.speak("#{j cue.text}", "#{j cue.speak_options}")
