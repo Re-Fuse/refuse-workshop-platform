@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   get 'director' => 'visitors#director'
   root to: 'visitors#index'
-  devise_for :users, ActiveAdmin::Devise.config
+  devise_for :users
   ActiveAdmin.routes(self)
   resources :users
 
