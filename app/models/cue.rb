@@ -28,6 +28,7 @@ class Cue < ApplicationRecord
 
   enum gesture: [:view, :speak, :watch, :bot]
 
+  validates_presence_of [:position, :room]
   validates_presence_of :partial_name, if: -> { view? }
   validates_presence_of [:text, :speak_options], if: -> { speak? }
   validates_presence_of [:youtube_indentifier, :youtube_start, :youtube_end], if: -> { watch? }
