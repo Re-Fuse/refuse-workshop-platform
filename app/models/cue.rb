@@ -28,11 +28,11 @@ class Cue < ApplicationRecord
 
   validates_presence_of :partial_name, if: -> { view? }
   validates_presence_of [:text, :speak_options], if: -> { speak? }
-  validates_presence_of [:youtube_id, :youtube_start, :youtube_end], if: -> { watch? }
+  validates_presence_of [:youtube_indentifier, :youtube_start, :youtube_end], if: -> { watch? }
 
   # Acivate this cue
   def activate!
-    unless  gesture == 'bot'
+    unless gesture == 'bot'
       Cue.update_all active: false
       update! active: true
     end

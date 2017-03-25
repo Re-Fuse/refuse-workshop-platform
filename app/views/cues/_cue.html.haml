@@ -7,4 +7,4 @@
   %td= truncate cue.text
   %td= cue.room.name
   %td
-    %a.btn.btn-primary.activate{ data: { id: cue.id }} Play
+    %a.btn.btn-primary.activate{ data: { id: cue.id }}= (cue.gesture == 'bot') ? 'Talk' : 'Play'

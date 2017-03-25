@@ -109,3 +109,8 @@
 .bot.header{
   font-size: 34px;
 }
+
+
+#stage blockquote::selection {
+    background-color: green;
+}

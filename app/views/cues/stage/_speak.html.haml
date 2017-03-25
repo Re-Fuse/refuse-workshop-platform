@@ -4,5 +4,10 @@
 .well
   %blockquote= cue.text
 
+%a.btn.btn-primary#save-text Save Highlighted Text
+
 :coffeescript
   responsiveVoice.speak("#{j cue.text}", "#{j cue.speak_options}")
+  $('#save-text').hide()
+  $('#save-text').on 'click', ->
+    Kolich.Selector.save()
