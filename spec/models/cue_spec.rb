@@ -5,7 +5,7 @@
 #  id                  :integer          not null, primary key
 #  active              :boolean
 #  name                :string
-#  position            :string
+#  position            :integer
 #  partial_name        :string
 #  duration            :string
 #  integer             :string
@@ -19,6 +19,7 @@
 #  youtube_end         :string
 #  speak_options       :string
 #  room_id             :integer
+#  user_id_id          :integer
 #
 
 require 'rails_helper'

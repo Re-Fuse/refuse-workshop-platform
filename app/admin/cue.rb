@@ -15,6 +15,7 @@ ActiveAdmin.register Cue do
     :youtube_start,
     :youtube_end,
     :speak_options,
-    :room_id
+    :room_id,
+    :user_id
   )
 end

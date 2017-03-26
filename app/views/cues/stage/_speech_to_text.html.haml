@@ -4,11 +4,11 @@
 .well
   #text
 
--# %p You can highlight whatever you find important by selecting the text you like and clicking the button `highlight`
--# %a.btn.btn-primary#save-text Highlight
+%p You have to allow your browser to acces your microphone and you can start speaking.
 
 :coffeescript
   listener = new webspeech.Listener()
   listener.listen "en", (text)->
     console.log(text)
     $('#text').append text
+    App.speech.speak text

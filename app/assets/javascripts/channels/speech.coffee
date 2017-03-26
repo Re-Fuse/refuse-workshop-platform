@@ -7,3 +7,6 @@ App.speech = App.cable.subscriptions.create "SpeechChannel",
 
   received: (data) ->
     # Called when there's incoming data on the websocket for this channel
+
+  speak: (message)->
+    @perform 'speak', message: message

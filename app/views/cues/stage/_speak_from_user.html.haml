@@ -1,0 +1,14 @@
+%h3
+  = cue.name
+  %small= cue.subtitle
+.well
+  %blockquote= simple_format cue.text
+
+%p You can highlight whatever you find important by selecting the text you like and clicking the button `highlight`
+%a.btn.btn-primary#save-text Highlight
+
+:coffeescript
+  responsiveVoice.speak("#{j cue.text}", "#{j cue.speak_options}")
+  $('#save-text').hide()
+  $('#save-text').on 'click', ->
+    Kolich.Selector.save()

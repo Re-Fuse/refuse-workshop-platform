@@ -5,7 +5,7 @@
 #  id                  :integer          not null, primary key
 #  active              :boolean
 #  name                :string
-#  position            :string
+#  position            :integer
 #  partial_name        :string
 #  duration            :string
 #  integer             :string
@@ -19,19 +19,22 @@
 #  youtube_end         :string
 #  speak_options       :string
 #  room_id             :integer
+#  user_id_id          :integer
 #
 
 class Cue < ApplicationRecord
   belongs_to :room
+  belongs_to :user
 
   acts_as_list
 
-  enum gesture: [:view, :speak, :watch, :bot, :speech_to_text]
+  enum gesture: [:view, :speak, :watch, :bot, :speech_to_text, :speak_from_user]
 
   validates_presence_of [:position, :room]
   validates_presence_of :partial_name, if: -> { view? }
   validates_presence_of [:text, :speak_options], if: -> { speak? }
   validates_presence_of [:youtube_indentifier, :youtube_start, :youtube_end], if: -> { watch? }
+  validates_presence_of :user_id, if: -> { speak_from_user? }
 
   # Acivate this cue
   def activate!
@@ -55,6 +58,8 @@ class Cue < ApplicationRecord
       path = "cues/stage/#{partial_name}"
     when 'speech_to_text'
       path = "cues/stage/speech_to_text"
+    when 'speak_from_user'
+      path = "cues/stage/speak_from_user"
     else
       fail "Gesture for cue #{id} not set in render"
     end
