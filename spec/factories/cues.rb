@@ -19,7 +19,7 @@
 #  youtube_end         :string
 #  speak_options       :string
 #  room_id             :integer
-#  user_id_id          :integer
+#  user_id             :integer
 #
 
 FactoryGirl.define do

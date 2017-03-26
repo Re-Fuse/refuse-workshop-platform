@@ -43,8 +43,8 @@ ActiveRecord::Schema.define(version: 20170326233757) do
     t.string   "youtube_end"
     t.string   "speak_options"
     t.integer  "room_id"
-    t.integer  "user_id_id"
-    t.index ["user_id_id"], name: "index_cues_on_user_id_id"
+    t.integer  "user_id"
+    t.index ["user_id"], name: "index_cues_on_user_id"
   end
 
   create_table "messages", force: :cascade do |t|

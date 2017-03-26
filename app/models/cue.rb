@@ -19,7 +19,7 @@
 #  youtube_end         :string
 #  speak_options       :string
 #  room_id             :integer
-#  user_id_id          :integer
+#  user_id             :integer
 #
 
 class Cue < ApplicationRecord
@@ -34,7 +34,7 @@ class Cue < ApplicationRecord
   validates_presence_of :partial_name, if: -> { view? }
   validates_presence_of [:text, :speak_options], if: -> { speak? }
   validates_presence_of [:youtube_indentifier, :youtube_start, :youtube_end], if: -> { watch? }
-  validates_presence_of :user_id, if: -> { speak_from_user? }
+  validates_presence_of [:user_id, :speak_options], if: -> { speak_from_user? }
 
   # Acivate this cue
   def activate!
