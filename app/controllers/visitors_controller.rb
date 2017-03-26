@@ -2,7 +2,7 @@ class VisitorsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @messages = Message.includes(:user).all
+    @messages = Message.includes(:user).order(:id).all
     @cue = Cue.find_by(active: true)
   end
 
