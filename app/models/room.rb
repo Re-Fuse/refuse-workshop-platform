@@ -18,10 +18,10 @@ class Room < ApplicationRecord
     # A1.1 Efthimis Pepe Thanasis
     # B1.1 Iro Bas George Roelof
     # C1.3 Tzeni Richard Kieran Els
-    # TODO: Check iro email chioti22@yahoo.com, Richard, richardehaynes@me.com and elsamondelaers@gmail.com Els
+    # TODO: Check iro email chioti22@gmail.com
 
     User.where(email: ['efthimis80@hotmail.com', 'jose25garcia@hotmail.com', 'katamiaennoia@gmail.com']).update_all room_id: find_by(name: 'kitchen-a').id
-    User.where(email: ['chioti22@yahoo.com', 'baswiegers@gmail.com', 'george.dumitriu.jz@gmail.com', 'roepot@gmail.com']).update_all room_id: find_by(name: 'kitchen-b').id
+    User.where(email: ['chioti22@gmail.com', 'baswiegers@gmail.com', 'george.dumitriu.jz@gmail.com', 'roepot@gmail.com']).update_all room_id: find_by(name: 'kitchen-b').id
     User.where(email: ['tzeniamorphy@gmail.com', 'richardehaynes@me.com', 'kieranklaassen@gmail.com', 'elsamondelaers@gmail.com']).update_all room_id: find_by(name: 'kitchen-c').id
 
     # roepot@gmail.com
@@ -41,7 +41,7 @@ class Room < ApplicationRecord
     # B2.1 Efthimis Pepe Tzeni Kieran
     # C2.1 Bas George Thanasis
 
-    User.where(email: ['richardehaynes@me.com', 'roepot@gmail.com', 'chioti22@yahoo.com', 'elsamondelaers@gmail.com']).update_all room_id: find_by(name: 'kitchen-a').id
+    User.where(email: ['richardehaynes@me.com', 'roepot@gmail.com', 'chioti22@gmail.com', 'elsamondelaers@gmail.com']).update_all room_id: find_by(name: 'kitchen-a').id
     User.where(email: ['efthimis80@hotmail.com', 'jose25garcia@hotmail.com', 'tzeniamorphy@gmail.com', 'kieranklaassen@gmail.com']).update_all room_id: find_by(name: 'kitchen-b').id
     User.where(email: ['baswiegers@gmail.com', 'george.dumitriu.jz@gmail.com', 'katamiaennoia@gmail.com']).update_all room_id: find_by(name: 'kitchen-c').id
 
