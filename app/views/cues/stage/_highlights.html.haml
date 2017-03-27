@@ -1,0 +1,20 @@
+%h3
+  Highlights from today
+
+%p You can highlight whatever you find important by selecting the text you like and clicking the button `highlight`
+
+
+.fix
+  %a.btn.btn-primary#save-text.fixed Highlight
+
+
+  .well.col-sm-10.pull-right.messages
+    %ul.list-unstyled
+      = render Message.highlights
+
+
+
+:coffeescript
+  $('#save-text').hide()
+  $('#save-text').on 'click', ->
+    Kolich.Selector.save()

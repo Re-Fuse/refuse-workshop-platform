@@ -15,4 +15,8 @@ class Message < ApplicationRecord
   belongs_to :room
 
   after_create_commit { MessageBroadcastJob.perform_now self }
+
+  def self.highlights
+    where("value LIKE '%Highlighted this%'").order(:id).includes(:user)
+  end
 end
