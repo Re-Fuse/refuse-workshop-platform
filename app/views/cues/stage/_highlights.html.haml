@@ -6,14 +6,7 @@
 
 .fix
   %a.btn.btn-primary#save-text.fixed Highlight
-
-
   .well.col-sm-10.pull-right.qwert
-    -# %h3 Word usage
-    -# %ul
-    -#   - Message.highlight_stats.each do |ind|
-    -#     %li= "#{ind[0]} - #{ind[1]} times"
-
     %h3 Summary
     %ul.list-unstyled
       - User.all.each do |user|
@@ -21,10 +14,6 @@
         - user.highlights.each do |message|
           - if message.value != 'Highlighted this: <span></span>'
             %blockquote.saying= message.value.sub!('Highlighted this:', '').html_safe
-
-    %h3 Sroll Up To See All
-
-
 
 :coffeescript
   $('#save-text').hide()
