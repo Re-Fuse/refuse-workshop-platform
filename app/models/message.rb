@@ -21,7 +21,6 @@ class Message < ApplicationRecord
   end
 
   def self.highlight_stats
-    tokeniser = WordsCounted.count(self.highlights.pluck(:value).join(),exclude: "span Highlighted this").token_frequency
-
+    WordsCounted.count(self.highlights.pluck(:value).join(),exclude: "span Highlighted this").token_frequency
   end
 end
