@@ -1,4 +1,4 @@
-%a.btn.record{ href: '#' } Start recording
+%button.btn.btn-primary.record  Restart recording
 
 %h3
   = cue.name
@@ -10,10 +10,10 @@
 
 :coffeescript
   listener = new webspeech.Listener()
-  $('.record').on 'click', listen
   window.listen = ->
     listener.listen "en", (text)->
       console.log(text)
       $('#text').append text
       App.speech.speak text
   listen()
+  $('.record').on 'click', listen
