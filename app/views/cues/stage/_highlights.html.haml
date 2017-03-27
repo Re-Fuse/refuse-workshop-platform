@@ -9,6 +9,12 @@
 
 
   .well.col-sm-10.pull-right.messages
+    %h3 Word usage
+    %ul
+      - Message.highlight_stats.each do |ind|
+        %li= "#{ind[0]} - #{ind[1]} times"
+
+    %h3 Summary
     %ul.list-unstyled
       = render Message.highlights
 

@@ -31,6 +31,7 @@ gem 'high_voltage'
 gem 'redis', '~> 3.2'
 gem 'annotate'
 gem 'acts_as_list'
+gem 'words_counted'
 
 group :development do
   gem 'better_errors'

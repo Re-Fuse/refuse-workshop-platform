@@ -19,4 +19,9 @@ class Message < ApplicationRecord
   def self.highlights
     where("value LIKE '%Highlighted this%'").order(:id).includes(:user)
   end
+
+  def self.highlight_stats
+    tokeniser = WordsCounted.count(self.highlights.pluck(:value).join(),exclude: "span Highlighted this").token_frequency
+
+  end
 end
