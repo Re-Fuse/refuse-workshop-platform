@@ -1,11 +1,11 @@
 %table.table
   %thead
-    - User.all.each do |user|
+    - User.where.not(name: 'RE-FUSE Bot').each do |user|
       %th= user.name
   %tbody
-    - (0..100).each do |number|
+    - (0..30).each do |number|
       %tr{ class: "time word_#{number}"}
-        - User.all.each do |user|
+        - User.where.not(name: 'RE-FUSE Bot').each do |user|
           %td.word.off{ data: {word: user.speech&.split(' ')[number] }}= user.speech&.split(' ')[number]
 
 
@@ -26,7 +26,7 @@
         console.log $(this).data('word')
         loadSpeech $(this).data('word')
       active = 0 if active == 100
-      setTimeout(progress, 2000)
+      setTimeout(progress, 1000)
 
     progress()
 
