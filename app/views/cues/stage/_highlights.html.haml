@@ -19,7 +19,8 @@
       - User.all.each do |user|
         %h3= user.name
         - user.highlights.each do |message|
-          %blockquote= message.value.sub!('Highlighted this:', '').html_safe
+          - if message.value != 'Highlighted this: <span></span>'
+            %blockquote.saying= message.value.sub!('Highlighted this:', '').html_safe
 
     %h3 Sroll Up To See All
 
