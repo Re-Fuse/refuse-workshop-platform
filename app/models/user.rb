@@ -34,4 +34,8 @@ class User < ApplicationRecord
   def speech
     speeches.pluck(:text).join
   end
+
+  def highlights
+    messages.where("value LIKE '%Highlighted this%'").order(:id)
+  end
 end

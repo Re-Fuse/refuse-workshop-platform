@@ -16,11 +16,7 @@ class Message < ApplicationRecord
 
   after_create_commit { MessageBroadcastJob.perform_now self }
 
-  def self.highlights
-    where("value LIKE '%Highlighted this%'").order(:id).includes(:user)
-  end
-
-  def self.highlight_stats
-    WordsCounted.count(self.highlights.pluck(:value).join(),exclude: "span Highlighted this").token_frequency
-  end
+  # def self.highlight_stats
+  #   WordsCounted.count(self.highlights.pluck(:value).join(),exclude: "span Highlighted this").token_frequency
+  # end
 end
