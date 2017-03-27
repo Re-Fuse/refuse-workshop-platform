@@ -30,4 +30,8 @@ class User < ApplicationRecord
   has_many :messages, dependent: :destroy
   belongs_to :room
   has_many :speeches
+
+  def speech
+    speeches.pluck(:text).join
+  end
 end

@@ -1,0 +1,25 @@
+%table.table
+  %thead
+    - User.all.each do |user|
+      %th= user.name
+  %tbody
+    - (1..100).each do |number|
+      %tr{ class: "time word_#{number}"}
+        - User.all.each do |user|
+          %td= user.speech&.split(' ')[number]
+
+
+:coffeescript
+  run = ->
+    active = 0
+
+    progress = ->
+      $($('.time')[active]).removeClass('on')
+      active = active + 1
+      $($('.time')[active]).addClass('on')
+      active = 0 if active == 100
+      setTimeout(progress, 2000)
+
+    progress()
+
+  run()
