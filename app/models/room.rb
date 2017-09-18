@@ -15,14 +15,14 @@ class Room < ApplicationRecord
   has_many :cues
 
   def self.set_group_a
-    User.where(email: ['efthimis80@hotmail.com', 'jose25garcia@hotmail.com', 'katamiaennoia@gmail.com']).update_all room_id: find_by(name: 'kitchen-a').id
-    User.where(email: ['chioti22@gmail.com', 'baswiegers@gmail.com', 'george.dumitriu.jz@gmail.com', 'roepot@gmail.com']).update_all room_id: find_by(name: 'kitchen-b').id
-    User.where(email: ['tzeniamorphy@gmail.com', 'richardehaynes@me.com', 'kieranklaassen@gmail.com', 'elsamondelaers@gmail.com']).update_all room_id: find_by(name: 'kitchen-c').id
+    User.where(id: [16, 19, 18, 23]).update_all room_id: find_by(name: 'kitchen-a').id
+    User.where(id: [17, 20, 22, 25]).update_all room_id: find_by(name: 'kitchen-b').id
+    User.where(id: [15, 14, 21, 24]).update_all room_id: find_by(name: 'kitchen-c').id
   end
 
   def self.set_group_b
-    User.where(email: ['richardehaynes@me.com', 'roepot@gmail.com', 'chioti22@gmail.com', 'elsamondelaers@gmail.com']).update_all room_id: find_by(name: 'kitchen-a').id
-    User.where(email: ['efthimis80@hotmail.com', 'jose25garcia@hotmail.com', 'tzeniamorphy@gmail.com', 'kieranklaassen@gmail.com']).update_all room_id: find_by(name: 'kitchen-b').id
-    User.where(email: ['baswiegers@gmail.com', 'george.dumitriu.jz@gmail.com', 'katamiaennoia@gmail.com']).update_all room_id: find_by(name: 'kitchen-c').id
+    User.where(id: [17, 19, 22, 24]).update_all room_id: find_by(name: 'kitchen-a').id
+    User.where(id: [16, 14, 18, 25]).update_all room_id: find_by(name: 'kitchen-b').id
+    User.where(id: [15, 20, 21, 23]).update_all room_id: find_by(name: 'kitchen-c').id
   end
 end
