@@ -9,7 +9,7 @@
   .well.col-sm-10.pull-right.qwert
     %h3 Summary
     %ul.list-unstyled
-      - User.all.each do |user|
+      - User.where(id: [16, 19, 18, 23, 17, 20, 22, 25, 15, 14, 21, 24]).each do |user|
         %h3= user.name
         - user.highlights.each do |message|
           - if message.value != 'Highlighted this: <span></span>'
