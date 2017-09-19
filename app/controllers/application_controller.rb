@@ -9,4 +9,14 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:account_update, keys: [:name])
   end
 
+
+end
+
+def show
+  render integration_show_path
+end
+def integration_show_path
+  {
+    ics_calendar: 'ics_calendar'
+  }[params[:integration_type]]
 end

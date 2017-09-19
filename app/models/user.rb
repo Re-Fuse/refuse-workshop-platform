@@ -30,12 +30,9 @@ class User < ApplicationRecord
   has_many :messages, dependent: :destroy
   belongs_to :room
   has_many :speeches
+  has_many :highlights
 
   def speech
     speeches.pluck(:text).join
-  end
-
-  def highlights
-    messages.where("value LIKE '%Highlighted this%'").order(:id)
   end
 end
