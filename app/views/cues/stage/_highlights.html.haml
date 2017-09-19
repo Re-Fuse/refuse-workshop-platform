@@ -1,12 +1,14 @@
-%h3
-  Highlights from today
-
-%p You can highlight whatever you find important by selecting the text you like and clicking the button `highlight`
-
+.row
+  .col-sm-10
+    %h3
+      Highlights from today
+    %p You can highlight whatever you find important by selecting the text you like and clicking the button `highlight`
+  .col-sm-2
+    %br
+    %a.btn.btn-primary.btn-lg#save-text.fixed Highlight
 
 .fix
-  %a.btn.btn-primary#save-text.fixed Highlight
-  .well.col-sm-10.pull-right.qwert
+  .well.col-sm-11.qwert
     %ul.list-unstyled
       - User.where(id: Highlight.pluck(:user_id).uniq).each do |user|
         .user{ id: "user_#{user.id}" }
