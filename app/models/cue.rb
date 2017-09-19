@@ -61,6 +61,8 @@ class Cue < ApplicationRecord
       path = "cues/stage/speech_to_text"
     when 'speak_from_user'
       path = "cues/stage/speak_from_user"
+    when 'html'
+      path = "cues/stage/html"
     else
       fail "Gesture for cue #{id} not set in render"
     end
