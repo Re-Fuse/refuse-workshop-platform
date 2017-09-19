@@ -28,11 +28,12 @@ class Cue < ApplicationRecord
 
   acts_as_list
 
-  enum gesture: [:view, :speak, :watch, :bot, :speech_to_text, :speak_from_user]
+  enum gesture: [:view, :speak, :watch, :bot, :speech_to_text, :speak_from_user, :html]
 
   validates_presence_of [:position, :room]
   validates_presence_of :partial_name, if: -> { view? }
   validates_presence_of [:text, :speak_options], if: -> { speak? }
+  validates_presence_of :text, if: -> { html? }
   validates_presence_of [:youtube_indentifier, :youtube_start, :youtube_end], if: -> { watch? }
   validates_presence_of [:user_id, :speak_options], if: -> { speak_from_user? }
 
