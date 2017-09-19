@@ -8,15 +8,15 @@
       %ul.nav.nav-tabs{:role => "tablist"}
         %li.active{:role => "presentation"}
           %a#room_id_1{"aria-controls" => "living-room", "data-toggle" => "tab", :href => "#living-room", :role => "tab"} 🍸 Living Room
-        - if current_user.director || current_user.room&.name == 'kitchen-a'
-          %li{:role => "presentation"}
-            %a#room_id_2{"aria-controls" => "kitchen-a", "data-toggle" => "tab", :href => "#kitchen-a", :role => "tab"} 🌮 Kitchen
-        - if current_user.director || current_user.room&.name == 'kitchen-b'
-          %li{:role => "presentation"}
-            %a#room_id_3{"aria-controls" => "kitchen-b", "data-toggle" => "tab", :href => "#kitchen-b", :role => "tab"} 🍉 Kitchen
-        - if current_user.director || current_user.room&.name == 'kitchen-c'
-          %li{:role => "presentation"}
-            %a#room_id_4{"aria-controls" => "kitchen-c", "data-toggle" => "tab", :href => "#kitchen-c", :role => "tab"} 🍇 Kitchen
+        -# - if current_user.director || current_user.room&.name == 'kitchen-a'
+        %li{:role => "presentation"}
+          %a#room_id_2{"aria-controls" => "kitchen-a", "data-toggle" => "tab", :href => "#kitchen-a", :role => "tab"} 🌮 Kitchen
+        -# - if current_user.director || current_user.room&.name == 'kitchen-b'
+        %li{:role => "presentation"}
+          %a#room_id_3{"aria-controls" => "kitchen-b", "data-toggle" => "tab", :href => "#kitchen-b", :role => "tab"} 🍉 Kitchen
+        -# - if current_user.director || current_user.room&.name == 'kitchen-c'
+        %li{:role => "presentation"}
+          %a#room_id_4{"aria-controls" => "kitchen-c", "data-toggle" => "tab", :href => "#kitchen-c", :role => "tab"} 🍇 Kitchen
 
       / Tab panes
       .tab-content
