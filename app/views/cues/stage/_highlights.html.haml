@@ -8,10 +8,10 @@
     %a.btn.btn-primary.btn-lg#save-text.fixed Highlight
 
 .fix
-  .well.col-sm-11.qwert
+  .well.col-sm-11
     %ul.list-unstyled
-      - User.where(id: Highlight.pluck(:user_id).uniq).each do |user|
-        .user{ id: "user_#{user.id}" }
+      - User.all.each do |user|
+        .user{ id: "user_#{user.id}", style: user.highlights.any? ? '' : 'display:none;' }
           %h3= user.name
           = render user.highlights
 :coffeescript

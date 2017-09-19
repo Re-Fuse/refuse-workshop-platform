@@ -7,6 +7,7 @@ App.highlight = App.cable.subscriptions.create "HighlightChannel",
 
   received: (data) ->
     $("#user_#{data['user_id']}").append data['message']
+    $("#user_#{data['user_id']}").show()
 
   speak: (message)->
     @perform 'speak', message: message
