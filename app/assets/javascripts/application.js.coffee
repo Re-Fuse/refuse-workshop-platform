@@ -43,9 +43,11 @@ Kolich.Selector.save = ->
   st = Kolich.Selector.getSelected()
   if st != ''
     App.highlight.speak("#{st}")
-    $('#save-text').hide()
+    $('#save-text').prop("disabled",true)
+    $('#save-text').addClass("disabled")
 
 
 $(document).ready ->
   $(document).bind 'mouseup', ->
-    $('#save-text').show()
+    $('#save-text').prop("disabled",false)
+    $('#save-text').removeClass("disabled")

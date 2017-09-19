@@ -15,6 +15,7 @@
           %h3= user.name
           = render user.highlights
 :coffeescript
-  $('#save-text').hide()
+  $('#save-text').prop("disabled",true)
+  $('#save-text').addClass("disabled")
   $('#save-text').on 'click', ->
     Kolich.Selector.save()
